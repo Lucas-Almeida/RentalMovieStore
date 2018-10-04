@@ -1,0 +1,13 @@
+﻿@model Vidly.ViewModels.CustomerMovieViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Customer.Name</h2>
+<p>Membership Type: @Model.Customer.MembershipType.Name</p>
+<p>Is Subscribed to Newsletter: @Model.Customer.IsSubscribedToNewsletter</p>
+@if (Model.Customer.Birthday != null){
+    <p>Birthday: @Model.Customer.Birthday.Value.ToShortDateString()</p>
+}
